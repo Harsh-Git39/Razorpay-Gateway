@@ -1,0 +1,619 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles - Professional Dark Theme */
+.Header-nav {
+  background: #1a1a1a;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.Header-nav > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading {
+  font-size: 1.8rem;
+  color: #528FF0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.heading::before {
+  content: "💳";
+  font-size: 1.5rem;
+}
+
+/* Main Content Area */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.payment-container {
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Info Section */
+.payment-info {
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.payment-info h2 {
+  font-size: 2.2rem;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.payment-info h3 {
+  font-size: 1.3rem;
+  color: #528FF0;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.payment-info p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.features {
+  margin-top: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.feature-item:hover {
+  transform: translateX(5px);
+  background: #e8f4ff;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+}
+
+.feature-text {
+  color: #333;
+  font-weight: 500;
+}
+
+.trust-badges {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 8px 16px;
+  background: #e8f4ff;
+  color: #528FF0;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #528FF0;
+}
+
+/* Payment Form Container */
+form {
+  background: white;
+  padding: 45px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+form h3 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+form p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+/* Input Fields */
+.input-group {
+  margin-bottom: 25px;
+}
+
+.input-label {
+  display: block;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+  font-family: inherit;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #528FF0;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(82, 143, 240, 0.1);
+}
+
+input:disabled, select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #f0f0f0;
+}
+
+/* Currency Select */
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23528FF0' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  padding-right: 50px;
+}
+
+/* Payment Button */
+button[type="submit"] {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #528FF0 0%, #3b7dd6 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 8px 20px rgba(82, 143, 240, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(82, 143, 240, 0.4);
+  background: linear-gradient(135deg, #3b7dd6 0%, #2a5ba8 100%);
+}
+
+button[type="submit"]:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Security Info */
+.security-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 15px;
+  background: #e8f5e9;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.security-note::before {
+  content: "🔒";
+  font-size: 1.2rem;
+}
+
+/* Error and Success Messages */
+.message {
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-weight: 600;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message.error {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef5350;
+}
+
+.message.error::before {
+  content: "⚠️";
+}
+
+.message.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #66bb6a;
+}
+
+.message.success::before {
+  content: "✓";
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Footer Styles - Professional Dark Theme */
+.Footer-nav {
+  background: #1a1a1a;
+  padding: 50px 40px 30px;
+  color: white;
+  margin-top: auto;
+}
+
+.Footer-nav > div {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #528FF0;
+  text-align: center;
+}
+
+.footer-description {
+  text-align: center;
+  color: #999;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.footerPolicy {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+}
+
+.footerPolicy a {
+  color: #999;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.footerPolicy a:hover {
+  color: #528FF0;
+}
+
+.footer-copyright {
+  text-align: center;
+  color: #666;
+  font-size: 0.85rem;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #2a2a2a;
+}
+
+/* Loading State */
+button[type="submit"]:disabled::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 10px;
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .payment-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .payment-info {
+    order: 2;
+    padding: 40px 30px;
+  }
+
+  form {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .Header-nav > div {
+    padding: 0 20px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 30px 15px;
+  }
+
+  .payment-info {
+    padding: 30px 20px;
+  }
+
+  .payment-info h2 {
+    font-size: 1.8rem;
+  }
+
+  form {
+    padding: 30px 20px;
+  }
+
+  .Footer-nav {
+    padding: 40px 20px 20px;
+  }
+
+  .footerPolicy {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .trust-badges {
+    justify-content: center;
+  }
+}
+
+/* Login Page Styles */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 40px 20px;
+}
+
+.login-box {
+  background: white;
+  padding: 60px 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  animation: slideUp 0.6s ease-out;
+}
+
+.login-title {
+  font-size: 2.2rem;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.login-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  padding: 16px 24px;
+  background: white;
+  color: #444;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-family: inherit;
+}
+
+.google-login-btn:hover {
+  border-color: #528FF0;
+  box-shadow: 0 4px 16px rgba(82, 143, 240, 0.2);
+  transform: translateY(-2px);
+}
+
+.google-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.login-divider::before {
+  margin-right: 15px;
+}
+
+.login-divider::after {
+  margin-left: 15px;
+}
+
+.login-features {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.login-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.login-feature-icon {
+  color: #528FF0;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.login-secure-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background: #e8f4ff;
+  color: #528FF0;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .login-box {
+    padding: 40px 30px;
+  }
+
+  .login-title {
+    font-size: 1.8rem;
+  }
+
+  .login-subtitle {
+    font-size: 1rem;
+  }
+}
+
+
+*:focus-visible {
+  outline: 3px solid #528FF0;
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .Header-nav,
+  .Footer-nav,
+  button {
+    display: none;
+  }
+}
