@@ -13,7 +13,7 @@ function App()
 
    useEffect(()=>
   {
-        axios.get('http://localhost:3000/auth/user', { withCredentials: true })
+        axios.get(`${import.meta.env.VITE_SERVER_URL}/auth/user`, { withCredentials: true })
         .then(res => 
           {
             setUser(res.data.user);
@@ -92,5 +92,6 @@ function App()
       </>
     );
 }
+
 
 export default App;
