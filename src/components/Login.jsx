@@ -11,7 +11,7 @@ function Login() {
         <h1 className="login-title">Welcome to HarLance</h1>
         <p className="login-subtitle">
           Secure payment gateway powered by enterprise-grade technology. 
-          Sign in to continue with your payment.
+          Sign in to continue with your payment.(Demo project works in test mode no actual payment)
         </p>
 
         <button onClick={handleLogin} className="google-login-btn">
@@ -45,5 +45,6 @@ function Login() {
     </div>
   );
 }
+
 
 export default Login;
