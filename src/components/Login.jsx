@@ -2,7 +2,7 @@ import React from "react";
 
 function Login() {
   const handleLogin = () => {
-    window.location.href = 'http://localhost:3000/auth/google';
+    window.location.href =  `${import.meta.env.VITE_SERVER_URL}/auth/google`;
   };
 
   return (
@@ -48,3 +48,4 @@ function Login() {
 
 
 export default Login;
+
