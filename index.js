@@ -11,7 +11,6 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const API = import.meta.env.VITE_SERVER_URL;
 
 
 app.use(cors({
@@ -77,7 +76,7 @@ const isAuthenticated = (req, res, next) =>
 }
 
 
-app.post(`/${API}/update-phone`, (req, res) => 
+app.post("/api/update-phone", (req, res) => 
   {
   if (!req.isAuthenticated()) 
     {
@@ -106,7 +105,7 @@ const razorpay = new Razorpay(
     }
 );
 
-app.post(`/${API}/create-order` ,isAuthenticated, async (req, res) =>
+app.post("/api/create-order" ,isAuthenticated, async (req, res) =>
 { 
    try
    {
@@ -146,7 +145,7 @@ app.post(`/${API}/create-order` ,isAuthenticated, async (req, res) =>
    }
 });
 
-app.post(`/${API}/verify-payment` , isAuthenticated, async (req, res) =>
+app.post("/api/verify-payment" , isAuthenticated, async (req, res) =>
 {
     try
     {
