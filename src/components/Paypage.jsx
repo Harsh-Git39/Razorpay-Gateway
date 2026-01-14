@@ -11,6 +11,7 @@ function Paypage()
    const [user, setUser] = useState(null);
    const [phone, setPhone] = useState(""); 
 
+   const API = import.meta.env.VITE_SERVER_URL;
 
    function handleChange(event)
    {
@@ -51,7 +52,7 @@ function Paypage()
 
      try
      {
-        const response = await axios.post("/api/create-order", 
+        const response = await axios.post(`/${API}/create-order`, 
             {
               amount : parseFloat(currAmount),
               currency : currency,
@@ -97,7 +98,7 @@ function Paypage()
    {
     try
     {
-      const response = await axios.post("/api/verify-payment", 
+      const response = await axios.post(`/${API}/verify-payment`, 
         {
          razorpay_order_id: razorpayResponse.razorpay_order_id,
          razorpay_payment_id: razorpayResponse.razorpay_payment_id,
@@ -180,5 +181,6 @@ function Paypage()
       </form>
   );
 }
+
 
 export default Paypage;
