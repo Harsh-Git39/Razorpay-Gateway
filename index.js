@@ -11,6 +11,8 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const API = import.meta.env.VITE_SERVER_URL;
+
 
 app.use(cors({
     origin: 'http://localhost:5173',
@@ -75,7 +77,7 @@ const isAuthenticated = (req, res, next) =>
 }
 
 
-app.post('/api/update-phone', (req, res) => 
+app.post(`/${API}/update-phone`, (req, res) => 
   {
   if (!req.isAuthenticated()) 
     {
@@ -104,7 +106,7 @@ const razorpay = new Razorpay(
     }
 );
 
-app.post("/api/create-order" ,isAuthenticated, async (req, res) =>
+app.post(`/${API}/create-order` ,isAuthenticated, async (req, res) =>
 { 
    try
    {
@@ -144,7 +146,7 @@ app.post("/api/create-order" ,isAuthenticated, async (req, res) =>
    }
 });
 
-app.post("/api/verify-payment" , isAuthenticated, async (req, res) =>
+app.post(`/${API}/verify-payment` , isAuthenticated, async (req, res) =>
 {
     try
     {
@@ -192,4 +194,5 @@ app.post("/api/verify-payment" , isAuthenticated, async (req, res) =>
 app.listen(PORT, () =>
 {
   console.log(`Server listening on  http://localhost:${PORT}`);
+
 });
